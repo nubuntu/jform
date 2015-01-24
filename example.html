@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="jquery.jform.css"/>
+<script src="jquery.jform.js"></script>
+<script>
+$(document).ready(function() {
+    $('#example').jform({
+		title:"Registration",
+		width:"100%",
+		defaultDateFormat:"yy-mm-dd",
+		messages:{required:"Isian ini tidak boleh kosong..."},
+		actions:{
+			listAction:"?jform-action=data",
+			createAction:"?jform-action=create",
+			updateAction:"?jform-action=update",
+		},
+		fields:{
+			ID:{width:"medium",readonly:true,list:false},
+			Tanggal:{width:"medium",type:"date",required:true},
+			Nama:{width:"large",type:"text",icon:"name",required:true},
+			Alamat:{width:"large",type:"textarea",required:true},
+		}
+	});
+});
+</script>
+
+</head>
+<body>
+<div id="example">
+</div>
+</body>
+</html>
